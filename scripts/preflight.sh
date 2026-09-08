@@ -8,7 +8,7 @@ urls=(
   "http://www.guidevitalite.site/"
   "https://guidevitalite.site/forcevital-avis/"
   "https://guidevitalite.site/repellio/"
-  "https://guidevitalite.site/slimqa/"
+  "https://guidevitalite.site/trimoryn/"
   "https://guidevitalite.site/a-propos/"
   "https://guidevitalite.site/contact/"
   "https://guidevitalite.site/confidentialite/"
@@ -25,7 +25,7 @@ done
 redirects=(
   "forcevital"
   "repellio"
-  "slimqa"
+  "trimoryn"
 )
 
 for redirect in "${redirects[@]}"; do
@@ -44,7 +44,7 @@ trap 'rm -r "$tmp_dir"' EXIT
 landings=(
   "forcevital-avis"
   "repellio"
-  "slimqa"
+  "trimoryn"
 )
 
 for landing in "${landings[@]}"; do
