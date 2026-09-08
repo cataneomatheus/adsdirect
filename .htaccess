@@ -1,0 +1,13 @@
+RewriteEngine On
+DirectoryIndex index.html index.php
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.guidevitalite\.site$ [NC]
+RewriteRule ^ https://guidevitalite.site%{REQUEST_URI} [R=301,L,NE]
+ErrorDocument 404 /404.php
+Options -Indexes
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
