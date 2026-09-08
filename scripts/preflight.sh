@@ -9,6 +9,7 @@ urls=(
   "https://guidevitalite.site/forcevital-avis/"
   "https://guidevitalite.site/repellio/"
   "https://guidevitalite.site/trimoryn/"
+  "https://guidevitalite.site/dashcam/"
   "https://guidevitalite.site/a-propos/"
   "https://guidevitalite.site/contact/"
   "https://guidevitalite.site/confidentialite/"
@@ -26,6 +27,7 @@ redirects=(
   "forcevital"
   "repellio"
   "trimoryn"
+  "dashcam"
 )
 
 for redirect in "${redirects[@]}"; do
@@ -45,6 +47,7 @@ landings=(
   "forcevital-avis"
   "repellio"
   "trimoryn"
+  "dashcam"
 )
 
 for landing in "${landings[@]}"; do
