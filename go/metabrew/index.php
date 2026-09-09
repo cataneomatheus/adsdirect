@@ -1,8 +1,7 @@
 <?php
 declare(strict_types=1);
 
-// Substituir pela URL pessoal de afiliado quando fornecida.
-const METABREW_DESTINATION_URL = 'https://getmetabrew.com/de/lp/v1';
+const METABREW_DESTINATION_URL = 'https://www.sailgeneral.com/375Q8F6Z/24K6LPT5/';
 
 $consent = $_POST['consent'] ?? 'rejected';
 $accepted = $consent === 'accepted';
