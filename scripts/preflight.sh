@@ -6,7 +6,7 @@ urls=(
   "https://www.guidevitalite.site/"
   "http://guidevitalite.site/"
   "http://www.guidevitalite.site/"
-  "https://guidevitalite.site/forcevital-avis/"
+  "https://guidevitalite.site/vitaslimex-erfahrungen/"
   "https://guidevitalite.site/repellio/"
   "https://guidevitalite.site/trimoryn/"
   "https://guidevitalite.site/dashcam/"
@@ -24,7 +24,7 @@ for url in "${urls[@]}"; do
 done
 
 redirects=(
-  "forcevital"
+  "vitaslimex"
   "repellio"
   "trimoryn"
   "dashcam"
@@ -44,7 +44,7 @@ done
 tmp_dir="$(mktemp -d)"
 trap 'rm -r "$tmp_dir"' EXIT
 landings=(
-  "forcevital-avis"
+  "vitaslimex-erfahrungen"
   "repellio"
   "trimoryn"
   "dashcam"

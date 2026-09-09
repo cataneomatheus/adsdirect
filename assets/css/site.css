@@ -100,7 +100,7 @@ h3 { font-size: 1.25rem; margin: 1.8rem 0 .6rem; }
 .legal h1 { font-size: clamp(2.3rem,6vw,4rem); }
 address { font-style: normal; }
 
-/* ForceVital: offer-first layout */
+/* Shared offer-first layout */
 .offer-first-page { max-width: 920px; padding-top: 2.2rem; }
 .commercial-hero { text-align: center; padding: 1.3rem 0 .8rem; }
 .commercial-hero .eyebrow { margin: 0; }
@@ -111,11 +111,11 @@ address { font-style: normal; }
 .commercial-highlights { display: flex; justify-content: center; gap: .65rem; flex-wrap: wrap; margin: 0; padding: 0; list-style: none; }
 .commercial-highlights li { padding: .45rem .8rem; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: #344536; font-size: .86rem; }
 .commercial-highlights li::before { content: "✓"; margin-right: .4rem; color: var(--accent-dark); font-weight: 900; }
-.forcevital-price-image-link { display: block; margin: .7rem auto 1rem; border: 1px solid var(--line); border-radius: 20px; background: #fff; cursor: pointer; overflow: hidden; box-shadow: 0 13px 34px rgba(0,0,0,.1); transition: transform .18s ease, box-shadow .18s ease; }
-.forcevital-price-image-link img { display: block; width: 100%; }
+.product-offer-image-link { display: block; margin: .7rem auto 1rem; border: 1px solid var(--line); border-radius: 20px; background: #fff; cursor: pointer; overflow: hidden; box-shadow: 0 13px 34px rgba(0,0,0,.1); transition: transform .18s ease, box-shadow .18s ease; }
+.product-offer-image-link img { display: block; width: 100%; }
 .medicglp-product-image { padding: clamp(1rem, 4vw, 2.5rem); background: radial-gradient(circle at 50% 40%, #fff 0, #edf8f7 58%, #cbe8e6 100%); }
 .medicglp-product-image img { width: min(100%, 430px); margin: auto; filter: drop-shadow(0 22px 20px rgba(0,0,0,.2)); }
-.forcevital-price-image-link:focus-visible { outline: 4px solid var(--accent-dark); outline-offset: 4px; }
+.product-offer-image-link:focus-visible { outline: 4px solid var(--accent-dark); outline-offset: 4px; }
 .main-offer-cta { margin-top: 0; }
 .main-offer-cta .button { max-width: 700px; margin-left: auto; margin-right: auto; }
 .main-offer-message { margin: .85rem auto 0 !important; color: #fff !important; font-size: clamp(1.05rem, 2.5vw, 1.28rem); font-weight: 800; }
@@ -140,8 +140,30 @@ address { font-style: normal; }
 .final-cta { margin-top: 3rem; }
 .mobile-sticky-cta { display: none; }
 
+/* Vitaslimex: compact German review */
+.compact-review { max-width: 940px; }
+.vitaslimex-page { --accent: #d89624; --accent-dark: #9a6412; --brand: #241b14; --brand-dark: #120d09; --ink: #241b14; --paper: #fbf8f1; --panel: #f5eddd; --line: #e1d3b8; }
+.vitaslimex-hero { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; margin: 1rem 0 1.2rem; border: 1px solid var(--line); border-radius: 24px; background: #fff; overflow: hidden; box-shadow: 0 18px 42px rgba(55,36,15,.12); }
+.vitaslimex-product { align-self: stretch; display: grid; place-items: center; min-height: 350px; padding: 1.3rem; background: radial-gradient(circle, #fff 0, #fbf1d8 58%, #ead09b 100%); }
+.vitaslimex-product img { display: block; width: min(100%, 380px); filter: drop-shadow(0 20px 18px rgba(56,35,10,.2)); }
+.vitaslimex-offer { align-self: stretch; display: flex; flex-direction: column; justify-content: center; padding: clamp(1.5rem,4vw,2.5rem); background: linear-gradient(150deg,#2f241c,#15100c); color: #fff; }
+.vitaslimex-offer h2 { margin: .35rem 0 .65rem; color: #fff; }
+.vitaslimex-offer .cta-checks { display: grid; margin: .2rem 0 .8rem; }
+.vitaslimex-offer .button { display: flex; min-height: 64px; align-items: center; justify-content: center; text-align: center; }
+.vitaslimex-offer .cta-note { text-align: center; }
+.compact-disclosure { border: 1px solid var(--line); border-radius: 12px; padding: .8rem 1rem; background: #fff; }
+.compact-review > section:not(.vitaslimex-hero):not(.cta-panel) { margin-top: 2.5rem; }
+.compact-review > section > h2 { margin-top: .3rem; }
+.benefit-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+.benefit-grid article { padding: 1.2rem; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.benefit-grid article > span { color: var(--accent-dark); font-size: .78rem; font-weight: 900; }
+.benefit-grid h3 { margin: .3rem 0 .4rem; }
+.benefit-grid p { margin: 0; font-size: .95rem; }
+.vitaslimex-verdict { border-top-color: var(--accent); background: #fffdf8; }
+.vitaslimex-verdict h2 { margin: .25rem 0 .7rem; }
+
 @media (hover: hover) and (pointer: fine) {
-  .forcevital-price-image-link:hover { transform: translateY(-2px); box-shadow: 0 17px 40px rgba(0,0,0,.14); }
+  .product-offer-image-link:hover { transform: translateY(-2px); box-shadow: 0 17px 40px rgba(0,0,0,.14); }
 }
 
 .cookie-modal { position: fixed; inset: 0; z-index: 1000; width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 1rem; border: 0; background: rgba(4, 18, 3, .76); backdrop-filter: blur(4px); }
@@ -176,10 +198,10 @@ address { font-style: normal; }
   .cookie-modal { padding: .65rem; }
   .cookie-modal__dialog { max-height: calc(100vh - 1.3rem); padding: 1.4rem 1rem 1.2rem; border-radius: 17px; }
   .cookie-modal__actions { grid-template-columns: 1fr; }
-  .forcevital-page { padding-bottom: 72px; }
-  .forcevital-page .site-header { box-shadow: none; }
-  .forcevital-page .nav-wrap { padding-top: .65rem; padding-bottom: .65rem; }
-  .forcevital-page .site-nav { display: none; }
+  .product-review-page { padding-bottom: 72px; }
+  .product-review-page .site-header { box-shadow: none; }
+  .product-review-page .nav-wrap { padding-top: .65rem; padding-bottom: .65rem; }
+  .product-review-page .site-nav { display: none; }
   .offer-first-page { padding: .75rem .7rem 2rem; }
   .commercial-hero { padding: .55rem 0 .35rem; }
   .commercial-hero h1 { margin: .2rem auto .1rem; font-size: clamp(1.55rem, 7vw, 1.9rem); }
@@ -189,7 +211,7 @@ address { font-style: normal; }
   .offer-label { margin-top: .08rem; font-size: .64rem; }
   .commercial-highlights { gap: .3rem; }
   .commercial-highlights li { padding: .28rem .5rem; font-size: .7rem; }
-  .forcevital-price-image-link { width: 100%; margin: .35rem 0 .7rem; border-radius: 12px; }
+  .product-offer-image-link { width: 100%; margin: .35rem 0 .7rem; border-radius: 12px; }
   .main-offer-cta { margin-bottom: 1.25rem; }
   .main-offer-cta p { font-size: .9rem; }
   .trust-strip { margin: 1.25rem 0 2.4rem; padding: 1rem .75rem; }
@@ -200,4 +222,10 @@ address { font-style: normal; }
   .inline-cta .button { width: 100%; min-height: 60px; }
   .mobile-sticky-cta { position: fixed; z-index: 900; right: .65rem; bottom: .65rem; left: .65rem; display: flex; min-height: 54px; align-items: center; justify-content: center; border: 2px solid #74d27f; border-radius: 10px; background: var(--accent-dark); color: #fff; font-weight: 850; text-decoration: none; box-shadow: 0 8px 24px rgba(0,0,0,.3); }
   .mobile-sticky-cta:hover { background: var(--accent); color: #fff; }
+  .vitaslimex-hero { grid-template-columns: 1fr; border-radius: 16px; }
+  .vitaslimex-product { min-height: 235px; padding: .7rem; }
+  .vitaslimex-product img { width: min(100%, 300px); }
+  .vitaslimex-offer { padding: 1.25rem 1rem 1.35rem; text-align: center; }
+  .vitaslimex-offer .cta-checks { text-align: left; }
+  .benefit-grid { grid-template-columns: 1fr; }
 }
