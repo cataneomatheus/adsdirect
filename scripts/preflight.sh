@@ -7,6 +7,7 @@ urls=(
   "http://guidevitalite.site/"
   "http://www.guidevitalite.site/"
   "https://guidevitalite.site/vitaslimex-erfahrungen/"
+  "https://guidevitalite.site/vitaslimex-avis/"
   "https://guidevitalite.site/repellio/"
   "https://guidevitalite.site/trimoryn/"
   "https://guidevitalite.site/dashcam/"
@@ -45,6 +46,7 @@ tmp_dir="$(mktemp -d)"
 trap 'rm -r "$tmp_dir"' EXIT
 landings=(
   "vitaslimex-erfahrungen"
+  "vitaslimex-avis"
   "repellio"
   "trimoryn"
   "dashcam"
