@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MetaBrew | Zum Angebot</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/favicon.ico" sizes="64x64">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <style>
+    body.metabrew-page { --ink: #2b211b; --muted: #63594f; --brand: #6b4933; --accent: #805135; --accent-dark: #593522; min-height: 100vh; min-height: 100svh; background: #faf7f2; }
+    .metabrew-backdrop { position: fixed; inset: 0; pointer-events: none; overflow: hidden; }
+    .metabrew-backdrop picture, .metabrew-backdrop img { display: block; width: 100%; height: 100%; }
+    .metabrew-backdrop img { object-fit: cover; object-position: center top; }
+    .metabrew-page .cookie-modal { background: rgba(35, 24, 17, .65); }
+    .metabrew-page .cookie-modal__accept { box-shadow: 0 5px 0 #462919, 0 10px 22px #46291933; }
+    .metabrew-page .cookie-modal__accept:hover { background: #684029; border-color: #684029; }
+    .metabrew-page .cookie-modal__dialog { max-width: 530px; }
+    .metabrew-page .cookie-modal__dialog .privacy-links { margin: 1.2rem 0 0; font-size: .8rem; }
+  </style>
+</head>
+<body class="metabrew-page">
+  <main class="metabrew-backdrop" inert aria-hidden="true">
+    <picture>
+      <source media="(max-width: 560px)" srcset="/assets/img/metabew-mobile.jpg">
+      <source media="(max-width: 1024px)" srcset="/assets/img/metabew-tablet.jpg">
+      <img src="/assets/img/metabew.jpg" alt="" fetchpriority="high" decoding="async">
+    </picture>
+  </main>
+  <dialog class="cookie-modal" open aria-modal="true" aria-labelledby="cookie-title" aria-describedby="cookie-description">
+    <div class="cookie-modal__dialog">
+      <p class="cookie-modal__eyebrow">Ihre Privatsphäre</p>
+      <h1 id="cookie-title" style="font-size:clamp(1.8rem,6vw,2.55rem);margin:0 0 .8rem">Cookies akzeptieren?</h1>
+      <p id="cookie-description">Wir speichern Ihre Auswahl in einem Cookie. Wenn Sie zustimmen, geben wir Werbe-Kennungen zur Zuordnung Ihres Besuchs an die Angebotsseite weiter. Mit beiden Optionen gelangen Sie zum MetaBrew-Angebot.</p>
+      <form id="consent-form" class="cookie-modal__actions" action="/go/metabrew/" method="post">
+        <button class="cookie-modal__accept" name="consent" value="accepted" type="submit">Akzeptieren</button>
+        <button class="cookie-modal__reject" name="consent" value="rejected" type="submit">Ablehnen</button>
+      </form>
+      <p class="privacy-links"><a href="/confidentialite/">Datenschutz</a> · <a href="/divulgation-affiliation/">Affiliate-Hinweis</a></p>
+    </div>
+  </dialog>
+  <script>
+    document.getElementById('consent-form').addEventListener('submit', function (event) {
+      this.querySelectorAll('[data-tracking]').forEach(function (input) { input.remove(); });
+      if (!event.submitter || event.submitter.value !== 'accepted') return;
+      var allowed = ['gclid', 'gbraid', 'wbraid', 'msclkid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      var params = new URLSearchParams(window.location.search);
+      allowed.forEach(function (key) {
+        var value = params.get(key);
+        if (!value) return;
+        var input = document.createElement('input');
+        input.type = 'hidden'; input.name = key; input.value = value;
+        input.setAttribute('data-tracking', '');
+        document.getElementById('consent-form').appendChild(input);
+      });
+    });
+  </script>
+</body>
+</html>
