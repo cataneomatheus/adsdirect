@@ -148,6 +148,10 @@ address { font-style: normal; }
 .vitaslimex-product img { display: block; width: min(100%, 380px); filter: drop-shadow(0 20px 18px rgba(56,35,10,.2)); }
 .vitaslimex-offer { align-self: stretch; display: flex; flex-direction: column; justify-content: center; padding: clamp(1.5rem,4vw,2.5rem); background: linear-gradient(150deg,#2f241c,#15100c); color: #fff; }
 .vitaslimex-offer h2 { margin: .35rem 0 .65rem; color: #fff; }
+.vitaslimex-hero-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: .35rem .55rem; margin: .35rem 0; color: #fff; line-height: 1.2; }
+.vitaslimex-hero-price strong { color: #f7d48c; font-size: clamp(2.6rem, 6vw, 3.7rem); letter-spacing: -.04em; }
+.vitaslimex-hero-price span { font-size: 1rem; }
+.vitaslimex-package-note { margin: .2rem 0 1.35rem; color: #e4d8c7; font-size: .9rem; }
 .vitaslimex-offer .cta-checks { display: grid; margin: .2rem 0 .8rem; }
 .vitaslimex-offer .button { display: flex; min-height: 64px; align-items: center; justify-content: center; text-align: center; }
 .vitaslimex-offer .cta-note { text-align: center; }
@@ -226,6 +230,7 @@ address { font-style: normal; }
   .vitaslimex-product { min-height: 235px; padding: .7rem; }
   .vitaslimex-product img { width: min(100%, 300px); }
   .vitaslimex-offer { padding: 1.25rem 1rem 1.35rem; text-align: center; }
+  .vitaslimex-hero-price { justify-content: center; }
   .vitaslimex-offer .cta-checks { text-align: left; }
   .benefit-grid { grid-template-columns: 1fr; }
 }
