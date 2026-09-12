@@ -29,7 +29,7 @@ if ($accepted) {
     if (implode('', $parts) !== '') $params['sub3'] = implode('cXnXl', $parts);
 }
 
-// Os parâmetros fixos do link de afiliado têm prioridade.
+// Feste Parameter des Affiliate-Links haben Vorrang.
 $fixed = [];
 parse_str((string) parse_url(METABREW_DESTINATION_URL, PHP_URL_QUERY), $fixed);
 $params = array_diff_key($params, $fixed);
