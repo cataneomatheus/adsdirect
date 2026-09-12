@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /go/
+
+Sitemap: https://kop-nanopolix.guidevitalite.site/sitemap.xml
