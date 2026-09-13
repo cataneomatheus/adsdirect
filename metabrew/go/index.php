@@ -16,18 +16,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $params = [];
-if ($accepted) {
-    foreach (['gclid', 'gbraid', 'wbraid', 'msclkid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as $key) {
-        $value = $_POST[$key] ?? null;
-        if (is_string($value) && $value !== '' && strlen($value) <= 2048 && !preg_match('/[\x00-\x1F\x7F]/', $value)) {
-            $params[$key] = $value;
-        }
+foreach (['gclid', 'gbraid', 'wbraid', 'msclkid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as $key) {
+    $value = $_POST[$key] ?? null;
+    if (is_string($value) && $value !== '' && strlen($value) <= 2048 && !preg_match('/[\x00-\x1F\x7F]/', $value)) {
+        $params[$key] = $value;
     }
-    if (isset($params['gclid'])) $params['sub2'] = $params['gclid'];
-    if (isset($params['utm_source'])) $params['sub1'] = $params['utm_source'];
-    $parts = array_map(static function ($key) use ($params) { return $params[$key] ?? ''; }, ['utm_medium', 'utm_campaign', 'utm_content', 'utm_term']);
-    if (implode('', $parts) !== '') $params['sub3'] = implode('cXnXl', $parts);
 }
+if (isset($params['gclid'])) $params['sub2'] = $params['gclid'];
+if (isset($params['utm_source'])) $params['sub1'] = $params['utm_source'];
+$parts = array_map(static function ($key) use ($params) { return $params[$key] ?? ''; }, ['utm_medium', 'utm_campaign', 'utm_content', 'utm_term']);
+if (implode('', $parts) !== '') $params['sub3'] = implode('cXnXl', $parts);
 
 // Feste Parameter des Affiliate-Links haben Vorrang.
 $fixed = [];

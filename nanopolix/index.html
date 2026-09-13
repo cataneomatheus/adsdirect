@@ -53,7 +53,6 @@
   <script>
     document.getElementById('consent-form').addEventListener('submit', function (event) {
       this.querySelectorAll('[data-tracking]').forEach(function (input) { input.remove(); });
-      if (!event.submitter || event.submitter.value !== 'accepted') return;
       var allowed = ['gclid', 'gbraid', 'wbraid', 'msclkid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
       var params = new URLSearchParams(window.location.search);
       allowed.forEach(function (key) {
