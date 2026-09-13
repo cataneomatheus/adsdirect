@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="fr">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MedicGLP | Accéder à l'offre</title>
+  <title>MedicGLP | Zum Angebot</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="/favicon.ico" sizes="64x64">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -33,27 +33,26 @@
 <body class="medicglp-page">
   <main class="medicglp-backdrop" inert aria-hidden="true">
     <picture>
-      <source media="(max-width: 560px)" srcset="/assets/img/medic-glp-mobile.jpg" type="image/jpeg">
-      <source media="(max-width: 1024px)" srcset="/assets/img/medic-glp-tablet.jpg" type="image/jpeg">
-      <img src="/assets/img/medic-glp-pc.jpg" alt="" fetchpriority="high" decoding="async">
+      <source media="(max-width: 560px)" srcset="/assets/img/medicglp-mobile.webp" type="image/webp">
+      <source media="(max-width: 1024px)" srcset="/assets/img/medicglp-tablet.webp" type="image/webp">
+      <img src="/assets/img/medicglp.webp" alt="" fetchpriority="high" decoding="async">
     </picture>
   </main>
   <dialog class="cookie-modal" open aria-modal="true" aria-labelledby="cookie-title" aria-describedby="cookie-description">
     <div class="cookie-modal__dialog">
-      <p class="cookie-modal__eyebrow">Votre confidentialité</p>
-      <h1 id="cookie-title" style="font-size:clamp(1.8rem,6vw,2.55rem);margin:0 0 .8rem">Accepter les cookies&nbsp;?</h1>
-      <p id="cookie-description">Nous enregistrons votre choix dans un cookie. Si vous acceptez, nous transmettons des identifiants publicitaires à la page de l'offre afin d'attribuer votre visite. Les deux options vous permettent d'accéder à l'offre MedicGLP.</p>
+      <p class="cookie-modal__eyebrow">Ihre Privatsphäre</p>
+      <h1 id="cookie-title" style="font-size:clamp(1.8rem,6vw,2.55rem);margin:0 0 .8rem">Cookies akzeptieren?</h1>
+      <p id="cookie-description">Wir speichern Ihre Auswahl in einem Cookie. Wenn Sie zustimmen, geben wir Werbe-Kennungen zur Zuordnung Ihres Besuchs an die Angebotsseite weiter. Mit beiden Optionen gelangen Sie zum MedicGLP-Angebot.</p>
       <form id="consent-form" class="cookie-modal__actions" action="/go/" method="post">
-        <button class="cookie-modal__accept" name="consent" value="accepted" type="submit">Accepter</button>
-        <button class="cookie-modal__reject" name="consent" value="rejected" type="submit">Refuser</button>
+        <button class="cookie-modal__accept" name="consent" value="accepted" type="submit">Akzeptieren</button>
+        <button class="cookie-modal__reject" name="consent" value="rejected" type="submit">Ablehnen</button>
       </form>
-      <p class="privacy-links"><a href="/confidentialite/">Confidentialité</a> · <a href="/divulgation-affiliation/">Divulgation d'affiliation</a></p>
+      <p class="privacy-links"><a href="/datenschutz/">Datenschutz</a> · <a href="/affiliate-hinweis/">Affiliate-Hinweis</a></p>
     </div>
   </dialog>
   <script>
     document.getElementById('consent-form').addEventListener('submit', function (event) {
       this.querySelectorAll('[data-tracking]').forEach(function (input) { input.remove(); });
-      if (!event.submitter || event.submitter.value !== 'accepted') return;
       var allowed = ['gclid', 'gbraid', 'wbraid', 'msclkid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
       var params = new URLSearchParams(window.location.search);
       allowed.forEach(function (key) {

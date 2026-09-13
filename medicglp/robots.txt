@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /go/
 
-Sitemap: https://acheter-medicglp.guidevitalite.site/sitemap.xml
+Sitemap: https://medicglp-kaufen.guidevitalite.site/sitemap.xml
