@@ -85,7 +85,9 @@
       this.setAttribute('aria-busy', 'true');
       document.getElementById('redirect-loader').hidden = false;
       var form = this;
-      requestAnimationFrame(function () { HTMLFormElement.prototype.submit.call(form); });
+      requestAnimationFrame(function () {
+        setTimeout(function () { HTMLFormElement.prototype.submit.call(form); }, 180);
+      });
     });
   </script>
 </body>

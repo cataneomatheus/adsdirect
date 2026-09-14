@@ -156,7 +156,7 @@ address { font-style: normal; }
 .cookie-modal__reject:hover { background: #ececea; }
 .cookie-modal__accept:focus-visible, .cookie-modal__reject:focus-visible { outline: 3px solid #111; outline-offset: 3px; }
 .cookie-modal__actions button:disabled { opacity: .65; cursor: wait; transform: none; }
-.redirect-loader { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 1rem; background: rgba(9, 18, 15, .72); backdrop-filter: blur(4px); }
+.redirect-loader { position: fixed; inset: 0; z-index: 2000; display: grid; place-items: center; padding: 1rem; background: rgba(9, 18, 15, .72); backdrop-filter: blur(4px); }
 .redirect-loader[hidden] { display: none; }
 .redirect-loader__panel { display: grid; justify-items: center; gap: 1rem; width: min(100%, 320px); padding: 2rem 1.5rem; border-radius: 18px; background: #fff; box-shadow: 0 24px 70px rgba(0, 0, 0, .3); color: var(--ink); text-align: center; }
 .redirect-loader__panel p { margin: 0; font-weight: 800; }
