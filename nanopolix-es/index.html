@@ -50,8 +50,22 @@
       <p class="privacy-links"><a href="/privacidad/">Política de privacidad</a> · <a href="/aviso-de-afiliacion/">Aviso de afiliación</a></p>
     </div>
   </dialog>
+  <div id="redirect-loader" class="redirect-loader" role="status" aria-live="polite" hidden>
+    <div class="redirect-loader__panel">
+      <span class="redirect-loader__spinner" aria-hidden="true"></span>
+      <p>Redirigiendo a la oferta…</p>
+    </div>
+  </div>
   <script>
     document.getElementById('consent-form').addEventListener('submit', function (event) {
+      if (this.dataset.submitting === 'true') {
+        event.preventDefault();
+        return;
+      }
+      event.preventDefault();
+      var submitter = event.submitter || document.activeElement;
+      var consent = submitter && submitter.name === 'consent' ? submitter.value : 'rejected';
+      this.dataset.submitting = 'true';
       this.querySelectorAll('[data-tracking]').forEach(function (input) { input.remove(); });
       var allowed = ['gclid', 'gbraid', 'wbraid', 'msclkid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
       var params = new URLSearchParams(window.location.search);
@@ -63,6 +77,15 @@
         input.setAttribute('data-tracking', '');
         document.getElementById('consent-form').appendChild(input);
       });
+      var consentInput = document.createElement('input');
+      consentInput.type = 'hidden'; consentInput.name = 'consent'; consentInput.value = consent;
+      consentInput.setAttribute('data-tracking', '');
+      this.appendChild(consentInput);
+      this.querySelectorAll('button[type="submit"]').forEach(function (button) { button.disabled = true; });
+      this.setAttribute('aria-busy', 'true');
+      document.getElementById('redirect-loader').hidden = false;
+      var form = this;
+      requestAnimationFrame(function () { HTMLFormElement.prototype.submit.call(form); });
     });
   </script>
 </body>
