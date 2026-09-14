@@ -50,19 +50,12 @@
       <p class="privacy-links"><a href="/integritet/">Integritetspolicy</a> · <a href="/affiliateinformation/">Affiliateinformation</a></p>
     </div>
   </dialog>
-  <div id="redirect-loader" class="redirect-loader" role="status" aria-live="polite" hidden>
-    <div class="redirect-loader__panel">
-      <span class="redirect-loader__spinner" aria-hidden="true"></span>
-      <p>Tar dig till erbjudandet…</p>
-    </div>
-  </div>
   <script>
     document.getElementById('consent-form').addEventListener('submit', function (event) {
       if (this.dataset.submitting === 'true') {
         event.preventDefault();
         return;
       }
-      event.preventDefault();
       var submitter = event.submitter || document.activeElement;
       var consent = submitter && submitter.name === 'consent' ? submitter.value : 'rejected';
       this.dataset.submitting = 'true';
@@ -83,11 +76,6 @@
       this.appendChild(consentInput);
       this.querySelectorAll('button[type="submit"]').forEach(function (button) { button.disabled = true; });
       this.setAttribute('aria-busy', 'true');
-      document.getElementById('redirect-loader').hidden = false;
-      var form = this;
-      requestAnimationFrame(function () {
-        setTimeout(function () { HTMLFormElement.prototype.submit.call(form); }, 180);
-      });
     });
   </script>
 </body>
