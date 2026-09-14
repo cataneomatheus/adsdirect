@@ -1,22 +1,12 @@
 <?php
 declare(strict_types=1);
 
-// Hier die endgültige MedicGLP-Angebots-URL eintragen.
-const MEDICGLP_DESTINATION_URL = 'https://www.sailgeneral.com/375Q8F6Z/24139LMS/';
-
-if (MEDICGLP_DESTINATION_URL === '') {
-    http_response_code(503);
-    header('Cache-Control: no-store');
-    header('X-Robots-Tag: noindex, nofollow');
-    header('Content-Type: text/plain; charset=UTF-8');
-    echo "Das MedicGLP-Angebot ist bald verfügbar.";
-    exit;
-}
+const NANOPOLIX_DESTINATION_URL = 'https://www.sailgeneral.com/375Q8F6Z/23Q92KSM/';
 
 $consent = $_POST['consent'] ?? 'rejected';
 $accepted = $consent === 'accepted';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    setcookie('medicglp_consent', $accepted ? 'accepted' : 'rejected', [
+    setcookie('nanopolix_consent', $accepted ? 'accepted' : 'rejected', [
         'expires' => time() + 60 * 60 * 24 * 180,
         'path' => '/',
         'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
@@ -37,11 +27,11 @@ if (isset($params['utm_source'])) $params['sub1'] = $params['utm_source'];
 $parts = array_map(static function ($key) use ($params) { return $params[$key] ?? ''; }, ['utm_medium', 'utm_campaign', 'utm_content', 'utm_term']);
 if (implode('', $parts) !== '') $params['sub3'] = implode('cXnXl', $parts);
 
-// Feste Parameter des Affiliate-Links haben Vorrang.
+// Los parámetros fijos del enlace de afiliado tienen prioridad.
 $fixed = [];
-parse_str((string) parse_url(MEDICGLP_DESTINATION_URL, PHP_URL_QUERY), $fixed);
+parse_str((string) parse_url(NANOPOLIX_DESTINATION_URL, PHP_URL_QUERY), $fixed);
 $params = array_diff_key($params, $fixed);
-$url = MEDICGLP_DESTINATION_URL;
+$url = NANOPOLIX_DESTINATION_URL;
 if ($params !== []) {
     $url .= (strpos($url, '?') !== false ? '&' : '?') . http_build_query($params, '', '&', PHP_QUERY_RFC3986);
 }

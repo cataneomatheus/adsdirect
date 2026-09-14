@@ -2,8 +2,8 @@ RewriteEngine On
 DirectoryIndex index.html index.php
 
 RewriteCond %{HTTPS} !=on [OR]
-RewriteCond %{HTTP_HOST} !^medicglp-kaufen\.guidevitalite\.site$ [NC]
-RewriteRule ^ https://medicglp-kaufen.guidevitalite.site%{REQUEST_URI} [R=301,L,NE]
+RewriteCond %{HTTP_HOST} !^comprar-nanopolix\.guidevitalite\.site$ [NC]
+RewriteRule ^ https://comprar-nanopolix.guidevitalite.site%{REQUEST_URI} [R=301,L,NE]
 
 ErrorDocument 404 /404.php
 Options -Indexes
