@@ -3,18 +3,6 @@ declare(strict_types=1);
 
 const NANOPOLIX_DESTINATION_URL = 'https://www.sailgeneral.com/375Q8F6Z/23Q92KSM/';
 
-$consent = $_POST['consent'] ?? 'rejected';
-$accepted = $consent === 'accepted';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    setcookie('nanopolix_consent', $accepted ? 'accepted' : 'rejected', [
-        'expires' => time() + 60 * 60 * 24 * 180,
-        'path' => '/',
-        'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
-        'httponly' => true,
-        'samesite' => 'Lax',
-    ]);
-}
-
 $params = [];
 foreach (['gclid', 'gbraid', 'wbraid', 'msclkid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as $key) {
     $value = $_POST[$key] ?? null;

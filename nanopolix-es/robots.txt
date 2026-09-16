@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /go/
-
-Sitemap: https://comprar-nanopolix.guidevitalite.site/sitemap.xml
