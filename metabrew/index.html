@@ -35,8 +35,9 @@
     .metabrew-page .country-modal__option img { display: block; width: 96px; height: 60px; max-width: 100%; object-fit: contain; background: #fff; border: 1px solid rgba(0,0,0,.15); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,.12); }
     .metabrew-page .country-modal__option:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 8px 20px rgba(89,53,34,.14); }
     .metabrew-page .country-modal__option:focus-visible { outline: 3px solid var(--accent-dark); outline-offset: 3px; }
-    .metabrew-page .country-modal__links { max-width: none !important; margin: 1.2rem auto 0 !important; color: var(--muted); font-size: .8rem !important; }
-    .metabrew-page .country-modal__links a { color: var(--accent-dark); }
+    .metabrew-page .country-modal__option:disabled { opacity: .6; cursor: wait; transform: none; }
+    .metabrew-page .country-modal__status { display: inline-block; margin: 1rem auto 0 !important; padding: .45rem .85rem; border-radius: 999px; background: #f0e5d9; color: var(--accent-dark) !important; font-size: .9rem !important; font-weight: 800; }
+    .metabrew-page .country-modal__status[hidden] { display: none; }
     @media (max-width: 560px) {
       .metabrew-page .country-modal { padding: .65rem; }
       .metabrew-page .country-modal__dialog { max-height: calc(100vh - 1.3rem); padding: 1.4rem 1rem 1.2rem; border-radius: 17px; }
@@ -73,11 +74,17 @@
           <span>London (Großbritannien)</span>
         </button>
       </form>
-      <p class="country-modal__links"><a href="/datenschutz/">Datenschutz</a> · <a href="/affiliate-hinweis/">Affiliate-Hinweis</a></p>
+      <p class="country-modal__status" role="status" aria-live="polite" lang="pt-BR" hidden>Redirecionando...</p>
     </div>
   </dialog>
   <script>
-    document.querySelector('.country-modal__options').addEventListener('submit', function () {
+    document.querySelector('.country-modal__options').addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (this.dataset.submitting === 'true') return;
+      this.dataset.submitting = 'true';
+      var submitter = event.submitter && event.submitter.name === 'country'
+        ? event.submitter
+        : this.querySelector('button[name="country"]');
       this.querySelectorAll('[data-tracking]').forEach(function (input) { input.remove(); });
       var allowed = ['gclid', 'gbraid', 'wbraid', 'msclkid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
       var params = new URLSearchParams(window.location.search);
@@ -92,6 +99,15 @@
         input.setAttribute('data-tracking', '');
         form.appendChild(input);
       });
+      var countryInput = document.createElement('input');
+      countryInput.type = 'hidden';
+      countryInput.name = 'country';
+      countryInput.value = submitter.value;
+      form.appendChild(countryInput);
+      form.querySelectorAll('button[type="submit"]').forEach(function (button) { button.disabled = true; });
+      form.setAttribute('aria-busy', 'true');
+      document.querySelector('.country-modal__status').hidden = false;
+      window.setTimeout(function () { HTMLFormElement.prototype.submit.call(form); }, 400);
     });
   </script>
 </body>
