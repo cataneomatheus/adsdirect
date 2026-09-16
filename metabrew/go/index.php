@@ -3,18 +3,6 @@ declare(strict_types=1);
 
 const METABREW_DESTINATION_URL = 'https://www.sailgeneral.com/375Q8F6Z/24K6LPT5/';
 
-$consent = $_POST['consent'] ?? 'rejected';
-$accepted = $consent === 'accepted';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    setcookie('metabrew_consent', $accepted ? 'accepted' : 'rejected', [
-        'expires' => time() + 60 * 60 * 24 * 180,
-        'path' => '/',
-        'secure' => !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off',
-        'httponly' => true,
-        'samesite' => 'Lax',
-    ]);
-}
-
 $params = [];
 foreach (['gclid', 'gbraid', 'wbraid', 'msclkid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as $key) {
     $value = $_POST[$key] ?? null;
@@ -35,6 +23,7 @@ $url = METABREW_DESTINATION_URL;
 if ($params !== []) {
     $url .= (strpos($url, '?') !== false ? '&' : '?') . http_build_query($params, '', '&', PHP_QUERY_RFC3986);
 }
+
 header('Cache-Control: no-store');
 header('X-Robots-Tag: noindex, nofollow');
 header('Location: ' . $url, true, 302);

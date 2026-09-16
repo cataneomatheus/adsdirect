@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="100" viewBox="0 0 190 100">
+  <rect width="190" height="100" fill="#fff"/>
+  <path d="M0 0h190v7.69H0zm0 15.38h190v7.69H0zm0 15.38h190v7.69H0zm0 15.38h190v7.69H0zm0 15.38h190v7.69H0zm0 15.38h190v7.69H0zm0 15.38h190V100H0" fill="#b22234"/>
+  <rect width="76" height="53.85" fill="#3c3b6e"/>
+  <defs><path id="star" d="M0-2.1.49-.65 2-.65.78.25 1.25 1.7 0 .8-1.25 1.7-.78.25-2-.65-.49-.65Z" fill="#fff"/></defs>
+  <g>
+    <use href="#star" x="6" y="4"/>
+    <use href="#star" x="18" y="4"/>
+    <use href="#star" x="30" y="4"/>
+    <use href="#star" x="42" y="4"/>
+    <use href="#star" x="54" y="4"/>
+    <use href="#star" x="66" y="4"/>
+    <use href="#star" x="12" y="9.7"/>
+    <use href="#star" x="24" y="9.7"/>
+    <use href="#star" x="36" y="9.7"/>
+    <use href="#star" x="48" y="9.7"/>
+    <use href="#star" x="60" y="9.7"/>
+    <use href="#star" x="6" y="15.4"/>
+    <use href="#star" x="18" y="15.4"/>
+    <use href="#star" x="30" y="15.4"/>
+    <use href="#star" x="42" y="15.4"/>
+    <use href="#star" x="54" y="15.4"/>
+    <use href="#star" x="66" y="15.4"/>
+    <use href="#star" x="12" y="21.1"/>
+    <use href="#star" x="24" y="21.1"/>
+    <use href="#star" x="36" y="21.1"/>
+    <use href="#star" x="48" y="21.1"/>
+    <use href="#star" x="60" y="21.1"/>
+    <use href="#star" x="6" y="26.8"/>
+    <use href="#star" x="18" y="26.8"/>
+    <use href="#star" x="30" y="26.8"/>
+    <use href="#star" x="42" y="26.8"/>
+    <use href="#star" x="54" y="26.8"/>
+    <use href="#star" x="66" y="26.8"/>
+    <use href="#star" x="12" y="32.5"/>
+    <use href="#star" x="24" y="32.5"/>
+    <use href="#star" x="36" y="32.5"/>
+    <use href="#star" x="48" y="32.5"/>
+    <use href="#star" x="60" y="32.5"/>
+    <use href="#star" x="6" y="38.2"/>
+    <use href="#star" x="18" y="38.2"/>
+    <use href="#star" x="30" y="38.2"/>
+    <use href="#star" x="42" y="38.2"/>
+    <use href="#star" x="54" y="38.2"/>
+    <use href="#star" x="66" y="38.2"/>
+    <use href="#star" x="12" y="43.9"/>
+    <use href="#star" x="24" y="43.9"/>
+    <use href="#star" x="36" y="43.9"/>
+    <use href="#star" x="48" y="43.9"/>
+    <use href="#star" x="60" y="43.9"/>
+    <use href="#star" x="6" y="49.6"/>
+    <use href="#star" x="18" y="49.6"/>
+    <use href="#star" x="30" y="49.6"/>
+    <use href="#star" x="42" y="49.6"/>
+    <use href="#star" x="54" y="49.6"/>
+    <use href="#star" x="66" y="49.6"/>
+  </g>
+</svg>
